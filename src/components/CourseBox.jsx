@@ -6,7 +6,7 @@ import play from '../assets/img/play.png'
 
 const CourseBox = ({ img, title, avatar, name, position, participant, price, pervideo }) => {
     return (
-        <div className="card bg-white shadow-xl rounded-2xl relative">
+        <div className="card bg-white shadow-xl rounded-2xl relative md:w-auto w-[276px]">
             <figure className='relative'>
                 <img
                     src={img}
@@ -20,30 +20,30 @@ const CourseBox = ({ img, title, avatar, name, position, participant, price, per
             </figure>
             <div>
                 <div className='p-6'>
-                    <h2 className="poppins font-semibold text-2xl leading-9 mb-5">{title}</h2>
+                    <h2 className="poppins font-semibold lg:text-2xl md:text-lg text-sm leading-9 mb-5">{title}</h2>
 
                     <div className='grid grid-cols-2'>
-                        <div className="card lg:card-side mb-5">
+                        <div className="flex items-center lg:card-side mb-5">
                             <figure>
                                 <img
                                     src={avatar}
-                                    alt="Album" className='w-[45px] h-[45px] rounded-full' />
+                                    alt="Album" className='lg:w-[45px] lg:h-[45px] w-[30px] h-[30px] rounded-full' />
                             </figure>
                             <div className="card-body p-3 gap-0">
-                                <h2 className="poppins text-sm leading-5 font-medium">{name}</h2>
-                                <p className='poppins font-normal text-xs'>{position}</p>
+                                <h2 className="poppins md:text-sm text-[10px] leading-5 font-medium">{name}</h2>
+                                <p className='poppins font-normal md:text-xs text-[7px]'>{position}</p>
                             </div>
                         </div>
 
-                        <div className="card lg:card-side mb-5 flex justify-end">
+                        <div className="flex items-center lg:card-side mb-5 flex justify-end">
                             <figure>
                                 <img
                                     src={element}
                                     alt="Album" className='w-[35px] h-[35px] rounded-full' />
                             </figure>
                             <div className="card-body p-3 gap-0">
-                                <h2 className="poppins text-sm leading-5 font-medium">{participant}</h2>
-                                <p className='poppins font-normal text-xs'>Participant</p>
+                                <h2 className="poppins md:text-sm text-[10px] leading-5 font-medium">{participant}</h2>
+                                <p className='poppins font-normal md:text-xs text-[7px]'>Participant</p>
                             </div>
                         </div>
                     </div>

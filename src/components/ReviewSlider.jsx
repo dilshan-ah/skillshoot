@@ -37,6 +37,17 @@ const ReviewSlider = () => {
                 cssMode={true}
                 mousewheel={true}
                 keyboard={true}
+                breakpoints={{
+                    0: {
+                      slidesPerView: 1,
+                    },
+                    768: {
+                      slidesPerView: 2,
+                    },
+                    1024: {
+                      slidesPerView: 3,
+                    },
+                  }}
                 modules={[Navigation, Mousewheel, Keyboard]}
                 className="mySwiper review-slider"
             >

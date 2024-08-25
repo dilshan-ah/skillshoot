@@ -1,11 +1,33 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import vector from '../assets/img/Vector.png'
 
 
 const Header = () => {
+
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 500) {
+                setScrolled(true);
+            } else {
+                setScrolled(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    console.log(scrolled);
+    
+
     return (
-        <div className='w-full primary-bg py-4'>
-            <div className='container mx-auto flex justify-between'>
+        <div className={`w-full primary-bg py-4 ${scrolled && 'fixed-nav'}`}>
+            <div className='container mx-auto flex justify-between md:px-0 px-7'>
                 <div className='flex items-center'>
                     <h1 className='text-2xl font-bold poppins text-white'>Skill <span className='secondary-color'>Shoot</span></h1>
                 </div>

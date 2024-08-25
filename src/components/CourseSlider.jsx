@@ -43,17 +43,20 @@ const CourseSlider = () => {
                 keyboard={true}
                 breakpoints={{
                     0: {
-                      slidesPerView: 1,
+                        slidesPerView: 'auto'
+                    },
+                    767: {
+                        slidesPerView: 'auto',
                     },
                     768: {
-                      slidesPerView: 2,
+                        slidesPerView: 2,
                     },
                     1024: {
-                      slidesPerView: 3,
+                        slidesPerView: 3,
                     },
-                  }}
+                }}
                 modules={[Navigation, Mousewheel, Keyboard]}
-                className="mySwiper"
+                className="mySwiper course-slider"
             >
                 <SwiperSlide>
                     <CourseBox img={sliderVideo} title="Basics of learning team management" avatar={avatarOne} name='Jone Owel' position="IT Manager" participant='120' price='120' pervideo='25' />
